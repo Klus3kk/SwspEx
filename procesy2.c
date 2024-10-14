@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
-int main(){
+int main(){ // We can't say which process will be first
     fork();
     printf("Hi\n");
     fork();
