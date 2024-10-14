@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 int main() {
-    if(fork() == 0) { // If 0, then it's potomna sekcja
+    if(fork() == 0) { // If 0, then it's potomna sekcja, fork = 2^n
         // printf("Child\n");
         printf("--------\n");
         printf("PID: %d\n", getpid());
