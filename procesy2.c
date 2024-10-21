@@ -7,5 +7,6 @@ int main(){ // We can't say which process will be first
     printf("Ha\n");
     fork();
     printf("Ho\n");
+    exit(7); // We can also use kill(pid, signum)
     return 0;
 }
