@@ -4,8 +4,9 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 
-int main() {
+int main(int argc, char* argv[]) {
     int fd1[2], fd2[2], fd3[2];
+    pid_t pid1, pid2, pid3, pid4;
     int numbers[4] = {1, 2, 3, 4};
     
     if (pipe(fd1) == -1 || pipe(fd2) == -1 || pipe(fd3) == -1) {
@@ -13,7 +14,7 @@ int main() {
         return 1;
     }
 
-    pid_t pid1 = fork();
+    pid1 = fork();
     if (pid1 == 0) {
         close(fd1[0]);
         write(fd1[1], numbers, sizeof(numbers));
@@ -21,7 +22,7 @@ int main() {
         return 0;
     }
 
-    pid_t pid2 = fork();
+    pid2 = fork();
     if (pid2 == 0) {
         close(fd1[1]);
         close(fd2[0]);
@@ -35,7 +36,7 @@ int main() {
         return 0;
     }
 
-    pid_t pid3 = fork();
+    pid3 = fork();
     if (pid3 == 0) {
         close(fd2[1]);
         close(fd3[0]);
@@ -49,7 +50,7 @@ int main() {
         return 0;
     }
 
-    pid_t pid4 = fork();
+    pid4 = fork();
     if (pid4 == 0) {
         close(fd3[1]);
         read(fd3[0], numbers, sizeof(numbers));
