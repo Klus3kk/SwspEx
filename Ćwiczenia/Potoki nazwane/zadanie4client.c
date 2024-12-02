@@ -41,7 +41,7 @@ int main() {
     while (1) {
         printf("Write a command (or 'adios' to exit): ");
         fgets(command, BUFFER_SIZE, stdin);
-        command[strcspn(command, "\n")] = 0; // Remove newline character
+        command[strcspn(command, "\n")] = 0; // Remove newline character \0
 
         if (strcmp(command, "adios") == 0) {
             break;
