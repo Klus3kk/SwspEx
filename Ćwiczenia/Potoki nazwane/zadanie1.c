@@ -25,7 +25,7 @@ int main() {
     } else if (pid == 0) {
         fd = open(FIFO_NAME, O_WRONLY);
         if (fd == -1) {
-            perror("open write");
+            perror("ouvert schreiben");
             exit(1);
         }
         write(fd, message, strlen(message));
@@ -34,7 +34,7 @@ int main() {
     } else {
         fd = open(FIFO_NAME, O_RDONLY);
         if (fd == -1) {
-            perror("open read");
+            perror("ouvert liesen");
             exit(1);
         }
         read(fd, buf, sizeof(buf));
