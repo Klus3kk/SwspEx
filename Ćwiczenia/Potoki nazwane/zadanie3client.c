@@ -43,5 +43,6 @@ int main() {
 
     close(fd2);
     unlink(buf);
+    unlink(SERVER_FIFO);
     return 0;
 }
