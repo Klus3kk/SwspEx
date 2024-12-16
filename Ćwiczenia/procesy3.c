@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include <cstdlib>
+#include <stdlib.h>
 
 int main(int argc, char* argv[]){
     int status = 4;

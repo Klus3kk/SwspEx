@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
-#include <cstdlib>
+#include <stdlib.h>
 
 // Orphan is the child alone
 
